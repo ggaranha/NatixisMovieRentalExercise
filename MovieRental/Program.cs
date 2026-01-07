@@ -1,6 +1,7 @@
 using MovieRental.Data;
 using MovieRental.Movie;
 using MovieRental.Rental;
+using MovieRental.Customer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +12,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IRentalFeatures, RentalFeatures>();*/
 
-builder.Services.AddEntityFrameworkSqlite().AddDbContext<MovieRentalDbContext>(ServiceLifetime.Singleton);
+builder.Services.AddEntityFrameworkSqlite().AddDbContext<MovieRentalDbContext>();
 builder.Services.AddScoped<IRentalFeatures, RentalFeatures>();
 builder.Services.AddScoped<IMovieFeatures, MovieFeatures>();
+builder.Services.AddScoped<ICustomerFeatures, CustomerFeatures>();
 
 var app = builder.Build();
 
