@@ -7,9 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddEntityFrameworkSqlite().AddDbContext<MovieRentalDbContext>();
+/*builder.Services.AddEntityFrameworkSqlite().AddDbContext<MovieRentalDbContext>(ServiceLifetime.Singleton);
 
-builder.Services.AddSingleton<IRentalFeatures, RentalFeatures>();
+builder.Services.AddSingleton<IRentalFeatures, RentalFeatures>();*/
+
+builder.Services.AddEntityFrameworkSqlite().AddDbContext<MovieRentalDbContext>(ServiceLifetime.Singleton);
+builder.Services.AddScoped<IRentalFeatures, RentalFeatures>();
+builder.Services.AddScoped<IMovieFeatures, MovieFeatures>();
 
 var app = builder.Build();
 
