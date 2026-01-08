@@ -24,8 +24,11 @@ Answers to the exercise:
 
 
  * No exceptions are being caught in this api, how would you deal with these exceptions?
- 
- -> Answer: I would make it that the API responses can reflect if an error happened so that they can be properly communicated to the user. For example, I would add a validation to make sure when a new record is saved in the API, that all the inputted data is in the correct format
+
+ -> Answer: I would make it that the API responses can reflect if an error happened so that they can be properly communicated to the user and return the appropriate error code in the response of the request. For example:
+ * I would add a validation to make sure when a new record is saved in the API, that all the inputted data is in the correct format and alert the user.
+ * I would alert if there was an internal error when trying to save the changes to the database.
+
 
 
 	## Challenge (Nice to have)
