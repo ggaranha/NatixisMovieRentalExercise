@@ -12,6 +12,9 @@ namespace MovieRental.Customer
 		
         public Customer Save(Customer customer)
         {
+            /*
+             * Add customer record to Customer table
+             */
             _movieRentalDb.Customers.Add(customer);
             _movieRentalDb.SaveChanges();
             return customer;
@@ -19,6 +22,9 @@ namespace MovieRental.Customer
 
         public Customer? GetCustomerByCustomerName(string customerName)
         {
+            /*
+             * Get customer from Customer table by customer name
+             */
             return _movieRentalDb.Customers.FirstOrDefault(c => c.CustomerName == customerName);
         }
     }

@@ -15,12 +15,6 @@ namespace MovieRental.Controllers
             _features = features;
         }
 
-        // [HttpGet]
-        // public IActionResult Get()
-        // {
-        //     return Ok(_features.GetAll());
-        // }
-
         [HttpPost]
         public IActionResult Post([FromBody] Customer.Customer customer)
         {

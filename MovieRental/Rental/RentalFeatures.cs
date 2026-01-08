@@ -32,6 +32,10 @@ namespace MovieRental.Rental
 
 		public async Task<bool> MakePayment(string paymentMethod, double price)
 		{
+			/*
+			 * Make payment using the payment provider specified in payment method and return true.
+			 * If the payment fails, return false.
+			 */
 			try
 			{
 				var paymentProvider = PaymentProviderFactory.GetPaymentProvider(paymentMethod);
